@@ -1,0 +1,43 @@
+body{
+  background-color:#ADF72B ;
+}
+h1   {color: #CC00FF;}
+
+p   {color:#CC33FF 
+;
+		font-family: Times New Roman;
+  		font-size: 110%;
+  		border: 1px solid powderblue;
+  		padding: 2px;
+  	}
+  	
+ table{
+ 	border: 5px;
+ 	border-color:#CC33FF ;
+  color:#912BF7 ;  
+ 	align: center;
+ }
+
+
+ .intro{  
+    font-weight: bold;
+    margin-bottom: 40px;
+ }
+
+ #name{
+ 	font-family: impact;
+ 	text-shadow: 5px #ff0000;
+ 	text-decoration: underline overline;
+ 	margin-left: 20%;
+ 	padding-top: 5px; 
+ }
+
+ #prepared{
+ 	font-family: tahoma;
+ 	font-size: 15px;
+  font-weight: bold;
+ 	padding: 8px;
+    margin-bottom: 5%;
+    color: #CC99FF;
+    text-decoration:none; 	
+ }

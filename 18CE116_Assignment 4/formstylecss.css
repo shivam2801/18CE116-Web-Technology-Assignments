@@ -1,0 +1,28 @@
+body{
+	background-image: url(bgim.jpg);
+	background-repeat: no-repeat;
+	background-size: 1580px 750px;
+}
+.simple-form{
+	text-align: center;
+	margin: 100px 400px;
+
+}
+
+
+
+#Registeration{
+	width: 40%;
+	background-color:#CC99FF;
+	opacity: 0.9;
+	padding: 50px 200px;
+}
+
+fieldset {
+	margin-top: -20px;
+	margin-bottom: -20px;
+	margin-left: -150px;
+	width: 200%;
+	display: block;
+	border: 2px groove ;
+}

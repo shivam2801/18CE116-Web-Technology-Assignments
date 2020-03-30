@@ -1,0 +1,134 @@
+<html>
+<head>
+<title>Canvas Clock</title>
+<style type="text/css">
+*{
+  align-content: center;
+}
+body{
+  align-items: center;
+  align-self: center;
+  background-image: url(BACK.jpg);
+  background-repeat: no-repeat;
+  background-size: 1580px 770px;
+}
+</style>
+</head>
+<body>
+<center>
+<canvas id="myCanvas" width="600" height="690">
+</canvas>
+</center>
+<script>
+var canvas = document.getElementById('myCanvas');
+var context = canvas.getContext('2d');  
+
+var clockImage = new Image();
+var clockImageLoaded = false;
+clockImage.onload = function(){
+  clockImageLoaded = true;
+}
+clockImage.src = 'download.jpg';
+
+function addBackgroundImage(){
+  context.drawImage(clockImage, canvas.width/2 * -1 ,canvas.height/2 * -1,canvas.width, canvas.height);
+}
+
+function degreesToRadians(degrees) {
+  return (Math.PI / 180) * degrees
+}
+
+function drawHourHand(theDate){
+  var hours = theDate.getHours() + theDate.getMinutes() / 60;
+
+  var degrees = (hours * 360 / 12) % 360;
+
+  context.save();
+  context.fillStyle = '#FF9999 ';
+  context.strokeStyle = '#555';
+  
+  context.rotate( degreesToRadians(degrees));
+
+  drawHand(125, 7, 3);
+
+  context.restore();
+
+}
+
+function drawMinuteHand(theDate){
+  var minutes = theDate.getMinutes() + theDate.getSeconds() / 60;
+
+  context.save();
+  context.fillStyle = '#CC33FF  ';
+  context.strokeStyle = '#555';
+  context.rotate( degreesToRadians(minutes * 6));
+
+  drawHand(175, 7, 5);
+
+  context.restore();
+}
+
+function drawHand(size, thickness, shadowOffset){
+  thickness = thickness || 5;
+
+  context.shadowColor = '#555';
+  context.shadowBlur = 10;
+  context.shadowOffsetX = shadowOffset;
+  context.shadowOffsetY = shadowOffset;
+  
+  context.beginPath();
+  context.moveTo(0,0); // center
+  context.lineTo(thickness *-1, -10);
+  context.lineTo(0, size * -1);
+  context.lineTo(thickness,-10);
+  context.lineTo(0,0);
+  context.fill();
+  context.stroke();
+}
+
+function drawSecondHand(theDate){
+  var seconds = theDate.getSeconds();
+
+  context.save();
+  context.fillStyle = '#6600FF ';
+  context.globalAlpha = 0.8;
+  context.rotate( degreesToRadians(seconds * 6));
+
+  drawHand(215, 4, 8);
+
+  context.restore();
+}
+
+function writeBrandName(){
+   context.font = "25pt Helvetica";
+   var brandName = '';
+   var brandNameSize = context.measureText(brandName);
+   context.strokeText("", 0 - brandNameSize.width / 2,-40);
+}
+
+function createClock(){
+
+  addBackgroundImage();
+  writeBrandName();
+
+  var theDate = new Date();
+  drawHourHand(theDate);
+  drawMinuteHand(theDate);
+  drawSecondHand(theDate);
+}
+
+function clockApp(){
+  if(!clockImageLoaded){
+    setTimeout('clockApp()', 100);
+    return;
+  }
+  context.translate(canvas.width/2, canvas.height/2);
+  createClock();
+  setInterval('createClock()', 1000)
+}
+
+clockApp();
+  
+</script>
+</body>
+</html>  

@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>Student Registeration Form</title>
+<link rel="stylesheet" type="text/css" href="formstylecss.css">
+</head>
+<body background="bgim.jpg">
+	<div class="simple-form">
+		<form id="Registeration">
+	<fieldset>
+	<legend>
+	<font color="#CC33FF">Registeration form</center>
+	</legend>
+		<br><br>
+	
+		<b>First Name:</b><input type="text" name="firstname" id="button" placeholder="Enter Firstname">
+	<br><br>
+		<b>Last Name:</b><input type="text" name="lastname"  id="button" placeholder="Enter Lastname">
+	<br><br>
+	<b>Gender</b><br>
+		<input type="radio" name="gender" value="male" checked>Male
+	<input type="radio" name="gender" value="female">Female
+	<input type="radio" name="gender" value="other">Other<br><br>
+	<b>City</b>
+	<select name="city">
+    <option value="Nadiad">Nadiad</option>
+	<option value="Ahmedabad">Ahmedabad</option>
+	<option value="Vadodara">Vadodara</option>
+	<option value="Surat">Surat</option>
+	<option value="Changa">Changa</option>
+	</select>
+	<br>
+	<br>
+		<b>Phone No</b>
+		<br>
+		<select id="ph">
+			<option>+91</option>
+			<option>+92</option>
+			<option>+93</option>
+			<option>+94</option>
+			<option>+95</option>
+		</select>
+		<input type="number" name="number"><br><br>
+	<b>Email ID</b>
+	<input type="email" name="email"><br><br>
+	<td><button onsubmit="submit();">Click to Submit</button></td>
+	</font>
+	</div>
+	</fieldset>
+</form>
+</body>  
+</html>

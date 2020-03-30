@@ -1,0 +1,83 @@
+</!DOCTYPE html>
+<html>
+<head>
+	<title>Web Technology Workshop</title>
+	<style type="text/css">
+		body{
+			background-repeat: no-repeat;
+			background-size:1580px 720px;
+		}
+		table{
+			border-collapse: separate;
+			border-spacing: 50px 15px;
+			margin-top: 10%;
+			margin-right: 10%;
+		}
+		tr{
+			border: 1;
+		}
+		.box {
+  		border: 1px solid green ;
+  		width: 40%;
+  		margin-left: 55%;
+  		margin-top: 7%;
+		background: #CC33FF ;
+		opacity: 0.89;
+		}
+	</style>
+</head>
+<body background="back.jpg">
+<br><br>
+<center><h2><font style="text-decoration: underline overline;color: #CC33FF " >Web Technology Workshop Registeration</font></h2></center>
+<div class="box">
+<form action="connect.php" method="post">
+	<table border="0" align="center">
+	<tr>
+	<td><label for="name">Name</label></td>
+	<td><input type="text" name="Name" maxlength="20" required></td>
+	</tr>
+	<tr>
+	<td><label for="Profession">Profession</label></td>
+	<td><select id="Profession" name="Profession">
+  <option value="Student">Student</option>
+  <option value="Faculty Member">Faculty Member</option>
+  <option value="Professional">Professional</option>
+  <option value="Company Representative">Company Representative</option>
+</select></td>
+	</tr>
+	<tr>
+	<td><label for="institute">Institute/Company Name </label></td>
+	<td><input type="text" name="Institute" maxlength="25" required></td>
+	</tr>
+	<tr>
+	<td><label for="Address">Address</label></td>
+	<td><input type="text" name="Address" maxlength="30" required></td>
+	</tr>
+	<tr>
+	<td><label for="City">City</label></td>
+	<td><input type="text" name="City" maxlength="15" required></td>
+	</tr>
+	<tr>
+	<td><label for="State">State</label></td>
+	<td><input type="text" name="State" maxlength="15" required></td>
+	</tr>
+	<tr>
+	<td><label for="Country">Country</label></td>
+	<td><input type="text" name="Country" maxlength="15" required></td>
+	</tr>
+	<tr>
+	<td><label for="Mobile">Mobile No</label></td>
+	<td><input type="tel" name="Mobile" pattern="[0-9]{10}" required></td>
+	</tr>
+	<tr>
+	<td><label for="Email">Email ID</label></td>
+	<td><input type="Email" name="Email" maxlength="20" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></td>
+	</tr>
+	</table>
+	<br>
+	<center style="margin-left: 40%">	<button type="submit" class="registerbtn">Register</button>
+	</center>
+</form>
+</div>
+</body>
+</html>
